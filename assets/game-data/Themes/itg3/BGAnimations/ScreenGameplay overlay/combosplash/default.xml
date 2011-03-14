@@ -1,0 +1,56 @@
+<ActorFrame> <children>
+
+<!-- Player 1 -->
+<ActorFrame
+	Player1FullComboFantasticMessageCommand="queuecommand,FantasticActivate" 
+	Player1FullComboExcellentMessageCommand="queuecommand,ExcellentActivate" 
+	Player1FullComboGreatMessageCommand="queuecommand,GreatActivate" > <children>
+	
+	<Layer File="../../ScreenGameplay Underlay/stepstats/bar_fantastic"
+		Condition="not GAMESTATE:IsCourseMode()"
+		OnCommand="fadeleft,.5;faderight,.5;x,SCREEN_CENTER_X-SCREEN_WIDTH/4;zoomtoheight,SCREEN_HEIGHT;diffusealpha,0"
+		FantasticActivateCommand="addy,SCREEN_HEIGHT;diffusealpha,1;decelerate,.75;addy,-SCREEN_HEIGHT/2;faderight,0;fadeleft,0;decelerate,.5;fadebottom,1;diffusealpha,0"
+	/>
+	<Layer File="../../ScreenGameplay Underlay/stepstats/bar_excellent"
+		Condition="not GAMESTATE:IsCourseMode()"
+		OnCommand="fadeleft,.5;faderight,.5;x,SCREEN_CENTER_X-SCREEN_WIDTH/4;zoomtoheight,SCREEN_HEIGHT;diffusealpha,0"
+		ExcellentActivateCommand="addy,SCREEN_HEIGHT;diffusealpha,1;decelerate,.75;addy,-SCREEN_HEIGHT/2;faderight,0;fadeleft,0;decelerate,.5;fadebottom,1;diffusealpha,0"
+	/>
+	<Layer File="../../ScreenGameplay Underlay/stepstats/bar_other"
+		Condition="not GAMESTATE:IsCourseMode()"
+		OnCommand="fadeleft,.5;faderight,.5;x,SCREEN_CENTER_X-SCREEN_WIDTH/4;zoomtoheight,SCREEN_HEIGHT;diffusealpha,0"
+		GreatActivateCommand="addy,SCREEN_HEIGHT;diffusealpha,1;decelerate,.75;addy,-SCREEN_HEIGHT/2;faderight,0;fadeleft,0;decelerate,.5;fadebottom,1;diffusealpha,0"
+	/>
+	
+</children> </ActorFrame>
+
+<!-- Player 2 -->
+<ActorFrame
+	Player2FullComboFantasticMessageCommand="queuecommand,FantasticActivate" 
+	Player2FullComboExcellentMessageCommand="queuecommand,ExcellentActivate" 
+	Player2FullComboGreatMessageCommand="queuecommand,GreatActivate" > <children>
+	
+	<Layer File="../../ScreenGameplay Underlay/stepstats/bar_fantastic"
+		Condition="not GAMESTATE:IsCourseMode()"
+		OnCommand="fadeleft,.5;faderight,.5;x,SCREEN_CENTER_X+SCREEN_WIDTH/4;zoomtoheight,SCREEN_HEIGHT;diffusealpha,0"
+		FantasticActivateCommand="addy,SCREEN_HEIGHT;diffusealpha,1;decelerate,.75;addy,-SCREEN_HEIGHT/2;faderight,0;fadeleft,0;decelerate,.5;fadebottom,1;diffusealpha,0"
+	/>
+	<Layer File="../../ScreenGameplay Underlay/stepstats/bar_excellent"
+		Condition="not GAMESTATE:IsCourseMode()"
+		OnCommand="fadeleft,.5;faderight,.5;x,SCREEN_CENTER_X+SCREEN_WIDTH/4;zoomtoheight,SCREEN_HEIGHT;diffusealpha,0"
+		ExcellentActivateCommand="addy,SCREEN_HEIGHT;diffusealpha,1;decelerate,.75;addy,-SCREEN_HEIGHT/2;faderight,0;fadeleft,0;decelerate,.5;fadebottom,1;diffusealpha,0"
+	/>
+	<Layer File="../../ScreenGameplay Underlay/stepstats/bar_other"
+		Condition="not GAMESTATE:IsCourseMode()"
+		OnCommand="fadeleft,.5;faderight,.5;x,SCREEN_CENTER_X+SCREEN_WIDTH/4;zoomtoheight,SCREEN_HEIGHT;diffusealpha,0"
+		GreatActivateCommand="addy,SCREEN_HEIGHT;diffusealpha,1;decelerate,.75;addy,-SCREEN_HEIGHT/2;faderight,0;fadeleft,0;decelerate,.5;fadebottom,1;diffusealpha,0"
+	/>
+	
+</children> </ActorFrame>
+
+
+
+
+
+</children> </ActorFrame>
+
