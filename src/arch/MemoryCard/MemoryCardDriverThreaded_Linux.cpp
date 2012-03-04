@@ -1,8 +1,10 @@
 #include "global.h"
 #include "MemoryCardDriverThreaded_Linux.h"
+#include "MemoryCardManager.h"
 #include "RageLog.h"
 #include "RageUtil.h"
 #include "RageFile.h"
+#include "PlayerNumber.h"
 
 #include <cerrno>
 #include <fcntl.h>
@@ -112,6 +114,19 @@ void MemoryCardDriverThreaded_Linux::GetUSBStorageDevices( vector<UsbStorageDevi
 	LOG->Trace( "GetUSBStorageDevices" );
 
 	vDevicesOut.clear();
+
+	FOREACH_PlayerNumber(p)
+	{
+		if ( MEMCARDMAN->m_sMemoryCardOsMountPoint[p].Get() != "" )
+		{
+			CString sStoragePath = MEMCARDMAN->m_sMemoryCardOsMountPoint[p];
+			UsbStorageDevice usbd;
+			usbd.SetOsMountDir( sStoragePath );
+			usbd.sSysPath = sStoragePath;
+			usbd.sDevice = sStoragePath;
+			vDevicesOut.push_back(usbd);
+		}
+	}
 
 	{
 		vector<CString> asDevices;

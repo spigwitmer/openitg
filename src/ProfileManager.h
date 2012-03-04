@@ -31,6 +31,8 @@ public:
 	bool LoadProfileFromMemoryCard( PlayerNumber pn );
 	Profile::LoadResult LoadEditableDataFromMemoryCard( PlayerNumber pn, Profile *pProfile );
 	bool FastLoadProfileNameFromMemoryCard( CString sRootDir, CString &sName ) const;
+	CString GetInternalProfilePath( PlayerNumber pn );
+	void SetInternalProfilePath( PlayerNumber pn, const CString &sPath );
 	void SaveAllProfiles() const;
 	bool SaveProfile( PlayerNumber pn ) const;
 	void UnloadProfile( PlayerNumber pn );
@@ -115,6 +117,8 @@ private:
 	
 	// actual loaded profile data
 	Profile	m_Profile[NUM_PLAYERS];	
+
+	CString m_asInternalProfilePaths[NUM_PLAYERS];
 
 	Profile m_MachineProfile;
 

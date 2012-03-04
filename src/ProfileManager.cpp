@@ -54,6 +54,7 @@ void ProfileManager::Init()
 		m_bLastLoadWasTamperedOrCorrupt[p] = false;
 		m_bLastLoadWasFromLastGood[p] = false;
 		m_bNewProfile[p] = false;
+		m_asInternalProfilePaths[(int)p] = "";
 	}
 
 	LoadMachineProfile();
@@ -168,6 +169,8 @@ bool ProfileManager::LoadProfileFromMemoryCard( PlayerNumber pn )
 	}
 
 	vector<CString> asDirsToTry;
+	if ( m_asInternalProfilePaths[pn] != "" )
+		asDirsToTry.push_back( m_asInternalProfilePaths[pn] );
 	GetMemoryCardProfileDirectoriesToTry( asDirsToTry );
 
 	int iLoadedFrom = -1;
@@ -222,6 +225,16 @@ bool ProfileManager::LoadProfileFromMemoryCard( PlayerNumber pn )
 
 	LOG->ProfileStop(key, "Loading Profile Ended");
 	return true; // If a card is inserted, we want to use the memory card to save - even if the Profile load failed.
+}
+
+void ProfileManager::SetInternalProfilePath( PlayerNumber pn, const CString &sPath )
+{
+	m_asInternalProfilePaths[pn] = sPath;
+}
+
+CString ProfileManager::GetInternalProfilePath( PlayerNumber pn )
+{
+	return m_asInternalProfilePaths[pn];
 }
 
 /* Load editable data without actually loading a profile */
