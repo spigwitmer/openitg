@@ -9,6 +9,13 @@
 
 #include "libtomcrypt/src/headers/tomcrypt.h"
 
+//Workaround for new libtomcrypt variable names changing
+//this overrides the enum sadly, but I can't check for the enum in the preprocessor -- this is HIGHLY unlikely to ever change
+#ifndef LTC_VENDORED_OITG
+#define LTC_LTC_PKCS_1_V1_5 LTC_PKCS_1_V1_5
+#endif /* LTC_VENDORED_OITG */
+//end workaround
+
 /* XXX huge hack to get stuff working */
 #if defined(WIN32)
 	#if defined(_DEBUG)

@@ -6,6 +6,7 @@
  */
 
 #define LTC_SOURCE
+#define LTC_VENDORED_OITG
 
 /* Use libtommath: */
 #define LTM_DESC
