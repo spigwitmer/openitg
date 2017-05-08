@@ -288,12 +288,12 @@ endif
 Arch = $(LoadingWindow) $(Sound) $(ArchHooks) $(InputHandler) $(MovieTexture) \
 	   $(Lights) $(MemoryCard) $(LowLevelWindow) $(ArchUtils) $(Dialog) $(Threads) $(USBDriver) \
 	   arch/arch_default.h arch/arch_platform.h arch/RageDriver.cpp arch/RageDriver.h \
-	   arch/ACIO/ACIO.h arch/ACIO/ACIO.cpp arch/COM/serial.h arch/COM/serial.cc arch/COM/v8stdint.h
+	   arch/ACIO/ACIO.h arch/ACIO/ACIO.cpp arch/COM/Serial.h arch/COM/Serial.cpp arch/COM/v8stdint.h
 
 if UNIX
-Arch += arch/COM/impl/unix.h arch/COM/impl/unix.cc arch/COM/impl/list_ports/list_ports_linux.cc
+Arch += arch/COM/impl/Unix.h arch/COM/impl/Unix.cpp arch/COM/impl/list_ports/List_ports_linux.cpp
 else
-Arch += arch/COM/impl/win.h arch/COM/impl/win.cc arch/COM/impl/list_ports/list_ports_win.cc
+Arch += arch/COM/impl/Win.h arch/COM/impl/Win.cpp arch/COM/impl/list_ports/List_ports_win.cpp
 endif
 
 	   	   

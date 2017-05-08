@@ -4,7 +4,7 @@
 /* Copyright 2012 William Woodall and John Harrison */
 
 #include <sstream>
-#include "win.h"
+#include "Win.h"
 
 using std::string;
 using std::wstring;
