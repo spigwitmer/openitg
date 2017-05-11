@@ -27,7 +27,7 @@ ARTIFACTS="$3"
 function print_usage
 {
 	echo "Usage: $0 [docker-image] [build-command] [artifacts]"
-	exit 0
+	exit 2
 }
 
 if ! [ -d "docker-images/$DOCKER_IMAGE_NAME" ]; then print_usage; fi

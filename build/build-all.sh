@@ -10,7 +10,7 @@ PUBLIC_RSA="$2"
 function print_usage
 {
 	echo "Usage: $0 [private RSA key]"
-	exit 0
+	exit 2
 }
 
 if ! [ -f "$PRIVATE_RSA" ]; then print_usage; fi

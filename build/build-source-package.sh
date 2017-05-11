@@ -9,7 +9,7 @@ OUTPUT_DIR="$1"
 function print_usage
 {
 	echo "Usage: $0 [output directory]"
-	exit 0
+	exit 2
 }
 
 if ! [ -d "$OUTPUT_DIR" ]; then print_usage; fi

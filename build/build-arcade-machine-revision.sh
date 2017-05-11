@@ -17,7 +17,7 @@ fi
 function print_usage
 {
 	echo "Usage: $0 [private RSA key] [public RSA key]"
-	exit 0
+	exit 2
 }
 
 if ! [ -f "$PRIVATE_RSA" ] || ! [ -f "$PATCH_RSA" ]; then print_usage; fi
